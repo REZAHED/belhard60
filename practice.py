@@ -4,13 +4,15 @@ sex_correct = "укажите свой пол правильно м\ж? "
 age = "укажите свой возраст  "
 while count <= 1 :
     sex2 = input(sex)
-    if sex2 == 'м,ж' :
-        print("информация сохранена")
+    if sex2 == "м" or sex2 =="ж" :
+            print("информация сохранена")
     else :
-        while sex2 != ('м', 'ж') :
+        while sex2 != "м" or sex2!= "ж":
             sex3 = input(sex_correct)
-            if sex3 == ('м', 'ж') :
+            if sex3 == "м" or  sex3 =="ж" :
+                sex2 = sex3
                 break
+
     age2 = int(input(age))
 
     if sex2 == "м" and age2 <= 20:
