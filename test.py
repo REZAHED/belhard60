@@ -1,14 +1,9 @@
-name: str = input()
-if bool(name) is True:
-    print("ITS OK")
-    print(bool(name) + bool(name))
-else:
-    print("You enter 0")
+from kivy.app import App
+from kivy.uix.button import Button
+
+class MyApp(App):
+    def build(self):
+        return Button(text="Hello World")
 
 
-
-
-
-
-
-
+MyApp().run()
