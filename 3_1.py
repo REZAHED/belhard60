@@ -1,6 +1,6 @@
 #Пользователь вводит предложение,заменить все пробелы на "-" 2-мя способами
 text = input("Введите предложение: \n")
-print(text.replace(' ','-'))    #1 вариант
+print(text.replace(' ', '-'))    #1 вариант
 text_new = text.split(" ")
 print("-".join(text_new))    #2 вариант
 
