@@ -1,4 +1,4 @@
-txt_file = open("dictionary.txt", encoding = 'utf-8',mode="r")
+txt_file = open("singular.txt", encoding = 'utf-8',mode="r")
 file_content = txt_file.read().lower()
 # print("The file content are: ", file_content)
 
