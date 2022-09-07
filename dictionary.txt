@@ -1,5 +1,5 @@
 hello
-what
+шалаш
 do
 then
 this
