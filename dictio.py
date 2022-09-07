@@ -6,12 +6,17 @@ content_list = file_content.split("\n")
 txt_file.close()
 word_number = 0
 a=0
-print(len(content_list))
-while a<= len(content_list):
-    if content_list[word_number]==content_list[word_number::-1]:
-        print(content_list[word_number])
-    else:
-        print("не нашел в", content_list[word_number])
+
+while a<= len(content_list)-1:
+    reverse = content_list[a]
+    reverse2= reverse[::-1]
+    if reverse==reverse2:
+        print(reverse)
         a+=1
-        word_number+=1
+        # reverse = ""
+        # reverse2 = ""
+    else:
+        a+=1
+        reverse=""
+        reverse2=""
 
