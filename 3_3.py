@@ -11,3 +11,8 @@ print(welcome_message)
 welcome_message_2 = "Здравствуйте {name}. Вы зашли на наш сайт из города {city}." \
                   "Вы подтверждаете, что вам {age} лет?".format(name=name, city=city, age=age)   #2-oй способ
 print(welcome_message_2)
+
+welcome_message_3 = f"""Здравствуйте {name}. Вы зашли на наш сайт из города {city}.\
+Вы подтверждаете, что вам {age} лет?"""   #3-oй способ
+
+print(welcome_message_3)
