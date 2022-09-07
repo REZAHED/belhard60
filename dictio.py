@@ -1,22 +1,17 @@
-txt_file = open("singular.txt", encoding = 'utf-8',mode="r")
+txt_file = open("singular.txt", encoding='utf-8', mode="r")
 file_content = txt_file.read().lower()
-# print("The file content are: ", file_content)
-
 content_list = file_content.split("\n")
 txt_file.close()
 word_number = 0
-a=0
-
-while a<= len(content_list)-1:
-    reverse = content_list[a]
-    reverse2= reverse[::-1]
-    if reverse==reverse2:
-        print(reverse)
-        a+=1
-        # reverse = ""
-        # reverse2 = ""
+count=1
+while word_number <= len(content_list)-1:
+    word = content_list[word_number]
+    word_reverse = word[::-1]
+    if word == word_reverse:
+        print(count,word)
+        word_number += 1
+        count += 1
     else:
-        a+=1
-        # reverse=""
-        # reverse2=""
+        word_number += 1
+
 
