@@ -1,5 +1,5 @@
-txt_file = open("dictionary.txt", "r")
-file_content = txt_file.read()
+txt_file = open("dictionary.txt", encoding = 'utf-8',mode="r")
+file_content = txt_file.read().lower()
 # print("The file content are: ", file_content)
 
 content_list = file_content.split("\n")
@@ -17,6 +17,6 @@ while a<= len(content_list)-1:
         # reverse2 = ""
     else:
         a+=1
-        reverse=""
-        reverse2=""
+        # reverse=""
+        # reverse2=""
 
