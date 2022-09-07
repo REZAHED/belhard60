@@ -1,4 +1,4 @@
-txt_file = open("singular.txt", encoding='utf-8', mode="r")
+txt_file = open("ruswords2.txt", encoding='utf-8', mode="r")
 file_content = txt_file.read().lower()
 content_list = file_content.split("\n")
 txt_file.close()
