@@ -4,3 +4,5 @@ second_number = float(input("введите 2 число: "))
 third_number = float(input("введите 2 число: "))
 print(round((first_number + second_number + third_number)/3, 3))
 
+
+
