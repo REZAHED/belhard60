@@ -18,8 +18,23 @@ text_title= text.title()
 text_expantabs = text.expandtabs(15)
 text_strpis = text.strip()
 text_removeprefix = text.removesuffix(" ")
+text_center = text.center(5,"-")
+text_zfill = text.zfill(10)
+text_ljust = text.ljust(10,"-")
+text_encode = text.encode()
+a= 15
+b= 16
+c= (a|b)
+print(c)
+
+
 print(text_strpis)
 print(text_removeprefix)
+print(text_center)
+print(text_zfill)
+print(text_ljust)
+print(text_encode)
+
 
 # print(text_index)
 # print(text_count)
