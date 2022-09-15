@@ -3,8 +3,10 @@
 # для этих ключей будут браться с клавиатуры
 
 number = int(input("введите количетсво : "))
-text_keys = input("введите имя: ")
+dic_main = {i:{"name":input("введите имя:"),"email":input("введите почту: ")}for i in range(0,number)}
 
-dic_0 = {"name":text_keys+str(i) for i in range(0,number-1)}
-print(dic_0)
-#dic_1 = {n:{name:email} for n in range(0,n)}
+print(dic_main)
+
+
+
+
