@@ -19,8 +19,6 @@ while c <= number:
     for i in range(0, c + 1):
         print(int(n_factorial // (lst1[i] * lst2[i])), end=" ")
     print()
-
-    # print(c)
     c += 1
     n_factorial = 1
     k_factorial = 1
