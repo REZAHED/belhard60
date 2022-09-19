@@ -3,32 +3,30 @@
 
 first_number = float(input("введите первое число:  "))
 operation = input("выберите действие : (+  -  *  /  ^) ")
-while True:
-    if operation != "+" and operation != "-" and operation != "*"\
-            and operation != "/" and operation != "^":
+oper = ["+", "-", "*", "/", "^"]
+while operation not in oper:
         print("неправильно выбрано действие")
         operation = input("Пожалуйста выберите действие : (+  -  *  /  ^) ")
-        continue
-    else:
-        break
-second_number = float(input("введите второе число:  "))
+else:
+
+    second_number = float(input("введите второе число:  "))
 
 if operation == "+":
-    print("\n" + "Результат " + str(first_number)+" + "
-          + str(second_number) + " = " + str(first_number + second_number))
+    print("\n" + f"Результат  {first_number} +"
+                 f" {second_number}  =  {first_number + second_number}")
 
 elif operation == "-":
-    print("\n" + "Результат " + str(first_number)+" - "
-          + str(second_number) + " = " + str(first_number - second_number))
+    print("\n" + f"Результат  {first_number} +"
+                 f" {second_number}  =  {first_number - second_number}")
 elif operation == "*":
-    print("\n" + "Результат " + str(first_number)+" * "
-          + str(second_number) + " = " + str(first_number * second_number))
+    print("\n" + f"Результат  {first_number} +"
+                 f" {second_number}  =  {first_number * second_number}")
 elif operation == "/":
-    print("\n" + "Результат " + str(first_number)+" / "
-          + str(second_number) + " = " + str(first_number / second_number))
+    print("\n" + f"Результат  {first_number} +"
+                 f" {second_number}  =  {first_number / second_number}")
 elif operation == "^":
-    print("\n" + "Результат " + str(first_number)+" ^ "
-          + str(second_number) + " = " + str(first_number ** second_number))
+    print("\n" + f"Результат  {first_number} +"
+                 f" {second_number}  =  {first_number ** second_number}")
 
 
 
