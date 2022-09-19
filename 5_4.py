@@ -1,35 +1,28 @@
 number = int(input("введите число:  "))
 n_factorial = 1
 k_factorial = 1
-a=1
-b=1
-k=0
-for i in range(2, number + 1):
-    n_factorial *= i
+lst1 = []
+lst2 = []
+c = 0
+while c <= number:
+    for i in range(2, c + 1):
+        n_factorial *= i
 
-    k_factorial *= i-1
+    for i in range(0, c + 1):
+        k_factorial *= i
+        if k_factorial == 0:
+            k_factorial = 1
+        lst1.append(k_factorial)
 
-print((n_factorial/n_factorial)* (a**(number-k)*b**k))
-print(k_factorial)
+    lst2 = lst1[::-1]
 
+    for i in range(0, c + 1):
+        print(int(n_factorial // (lst1[i] * lst2[i])), end=" ")
+    print()
 
-# n_k=number
-# k=0
-# for i in range(0,number):   # для расчета N!
-#     if (number - 1 - i)>0:
-#         number2 *= (number - 1 - i)
-#         n_k *= (number - k - 1)
-#         k += 1
-#
-#
-#
-#     print(n_k)
-    # else:
-    #     # print(number2)
-    #     # print(n_k)
+    # print(c)
+    c += 1
+    n_factorial = 1
+    k_factorial = 1
+    lst1.clear()
 
-
-
-
-# for i in range(0,number+1):
-#     number2=number*(number-1-i)
