@@ -4,4 +4,5 @@ number_sort = set(number)
 number_lst = []
 for i, j in enumerate(number_sort):
     number_lst.append(j)
-print(number_lst)
+print("Input: ", number)
+print("Sorted:",number_lst)
