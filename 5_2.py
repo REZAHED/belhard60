@@ -16,16 +16,16 @@ if operation == "+":
                  f" {second_number}  =  {first_number + second_number}")
 
 elif operation == "-":
-    print("\n" + f"Результат  {first_number} +"
+    print("\n" + f"Результат  {first_number} -"
                  f" {second_number}  =  {first_number - second_number}")
 elif operation == "*":
-    print("\n" + f"Результат  {first_number} +"
+    print("\n" + f"Результат  {first_number} *"
                  f" {second_number}  =  {first_number * second_number}")
 elif operation == "/":
-    print("\n" + f"Результат  {first_number} +"
+    print("\n" + f"Результат  {first_number} /"
                  f" {second_number}  =  {first_number / second_number}")
 elif operation == "^":
-    print("\n" + f"Результат  {first_number} +"
+    print("\n" + f"Результат  {first_number} ^"
                  f" {second_number}  =  {first_number ** second_number}")
 
 
