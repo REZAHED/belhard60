@@ -9,5 +9,5 @@ while c < number_n:
         print(d)
         c += 1
         d += 1
-    else:
-        d += 1
+    d += 1
+
