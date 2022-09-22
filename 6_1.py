@@ -1,26 +1,29 @@
 # Написать функцию перевода десятичного числа в двоичное и обратно, без
 # использования функции int
 number = int(input("введите число: "))
+
 lst = []
 
+def binar(numb : int) -> bin:
+    lst.clear()
+    while numb:
+        lst.append(numb % 2)
+        numb //= 2
 
-def binar(number : int) -> bin:
+    return lst[::-1]
+
+def decimal(lst:list)-> int:
     decim = 0
-    while number:
-        lst.append(number % 2)
-        number //= 2
 
-    for i in range(len(lst)-1, -1, -1):
-        print(lst[i], end="")
-    print()
+    for i in range(len(lst)-1,-1,-1):
 
-    for i in range(0, len(lst)):
         if lst[i] != 0:
             decim += 2 ** i
-    print(decim)
+    return decim
 
+# binar(number)
+# decimal(lst)
 
-binar(number)
-
-
+print(f"число {number} в двоечной системе равно {binar(number)}")
+print(f"число {binar(number)} в двоечной системе равно {decimal((lst))}")
 
