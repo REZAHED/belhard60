@@ -26,5 +26,5 @@ def decimal(lst:list) -> int:
 
 
 print(f"число {number} в двоечной системе равно {binar(number)}")
-print(f"число {binar(number)} в двоечной системе равно {decimal((lst))}")
+print(f"число {binar(number)} в двоечной системе равно {decimal(lst)}")
 
