@@ -14,7 +14,7 @@ def rand(number:list):          # создать рандомный список
 def odd():
     print(f"первоначвльный рандомный список :{rand(number)}")
     number2 =[]
-    number2 = list(filter(lambda x:x%2==0 ,(number)))
+    number2 = list(filter(lambda x: x % 2 == 0, number))
 
     for i in range(0,len(number)):
         if number[i]%2:
