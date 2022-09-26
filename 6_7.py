@@ -2,9 +2,10 @@
 # соседей, для крайних чисел одним из соседей является число с противоположной
 # стороны списка
 
-number = [1, 4, 6, 7]
+number = [2, 4, 6, 7]
 for i in range(0, len(number)):
-    if i<len(number)-1:
-        sum = number[i-1] + number[i+1]
-        print(sum)
-    print(number[i-1] + number[i-len(number)])
+    if i == len(number)-1:
+        summ = number[0] + number[i-1]
+    else:
+        summ = number[i - 1] + number[i + 1]
+    print(summ)
