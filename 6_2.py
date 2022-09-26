@@ -12,9 +12,11 @@ dic = {"A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".", "F": "..-.",
 
        }
 lst=[]
-for i in range(len(text)):
-    if text[i] not in dic:
-        lst.append("")
-    else:
-        lst.append(dic[text[i]])
-print(" ".join(lst))
+def morse(text):
+    for i in range(len(text)):
+        if text[i] not in dic:
+            lst.append("")
+        else:
+            lst.append(dic[text[i]])
+    return lst
+print(" ".join(morse(text)))
