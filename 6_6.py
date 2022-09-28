@@ -11,13 +11,19 @@ def rand(number:list):          # создать рандомный список
         number.append(random.randint(0, 100))
     return number
 
+
 def odd():
     print(f"первоначвльный рандомный список :{rand(number)}")
-    number2 = list(filter(lambda x: x % 2 == 0, number))
+    # number = list(filter(lambda x: x % 2 == 0, number))
+
+
 
     for i in range(0,len(number)):
-        if number[i]%2:
-            number2.append(number[i])
-    return number2
+        if not number[i]%2:
+
+            number.insert(0,number.pop(i))
+
+
+    return number
 
 print("\t"*4,f"отсортированный:{odd()}")

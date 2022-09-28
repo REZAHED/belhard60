@@ -13,6 +13,3 @@ for i, j in dic.items():
         print(f" у пользователя {i} email не указан ")
 
 
-
-
-
