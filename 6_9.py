@@ -8,8 +8,8 @@ dic = {"id_1": {"name": "alex", "surname": "petrov", "tel": "+375297525887", "em
        "id_3": {"name": "dmitri", "surname": "slizh", "tel": "+375297525887"}
        }
 
-for i, j in dic.items():
-    if "email" not in j or j["email"] == "":
-        print(f" у пользователя {i} email не указан ")
+for i in dic.values():
+    if "email" not in i or i["email"] == "":
+        print(f" у пользователя {i.get('name')} email не указан ")
 
 
