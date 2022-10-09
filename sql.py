@@ -89,3 +89,42 @@ CREATE TABLE IF NOT EXISTS order_items(
 
 conn.commit()
 
+
+# cur.execute('''
+# INSERT INTO users(name, email) VALUES(?, ?);
+# ''',('sasha', 'sasha@info.com'))
+#
+# # conn.commit()
+
+# cur.execute('''
+# INSERT INTO users(name, email) VALUES(?, ?);
+# ''',('tanya', 'tanya@info.com'))
+
+# conn.commit()
+
+# cur.execute('''
+# INSERT INTO categories(name) VALUES(?);
+# ''',('shoes',))
+#
+# conn.commit()
+
+# cur.execute('''
+# INSERT INTO products(title, description,category_id) VALUES(?, ?, ?);
+# ''',('boots','black for men',1))
+#
+# conn.commit()
+
+# cur.execute('''
+# INSERT INTO statuses(name) VALUES(?);
+# ''',('on sale',))
+#
+# conn.commit()
+
+cur.execute('''
+INSERT INTO orders(user_id, status_id) VALUES(?, ?);
+''',(2,1))
+
+conn.commit()
+
+
+
