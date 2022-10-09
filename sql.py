@@ -120,11 +120,25 @@ conn.commit()
 #
 # conn.commit()
 
+# cur.execute('''
+# INSERT INTO orders(user_id, status_id) VALUES(?, ?);
+# ''',(2,1))
+#
+# conn.commit()
+
+# cur.execute('''
+# INSERT INTO order_items(order_id, product_id) VALUES(?, ?);
+# ''',(1,1))
+#
+# conn.commit()
+
+
 cur.execute('''
-INSERT INTO orders(user_id, status_id) VALUES(?, ?);
-''',(2,1))
+SELECT name, email, id FROM users;
+''')
+print(cur.fetchall())
 
-conn.commit()
-
-
-
+cur.execute('''
+SELECT title, id , description FROM products;
+''')
+print(cur.fetchall())
