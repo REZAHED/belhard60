@@ -149,3 +149,12 @@ cur.execute('''
 SELECT name FROM statuses;
 ''')
 print(cur.fetchall())
+
+cur.execute('''
+SELECT users.name, orders.id FROM users JOIN orders ON users.id = orders.user_id;
+''')
+print(cur.fetchall())
+cur.execute('''
+SELECT order_items.id, products.title FROM order_items JOIN products ON order_items.id = products.category_id;
+''')
+print(cur.fetchall())
