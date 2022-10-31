@@ -1,52 +1,82 @@
-text = """
-Мобильный телефон 3000
+import sqlite3
 
-ru от 1 шт 18000
 
-ru от 5 шт 17000
+conn = sqlite3.connect('db.sqlite3')
+cur = conn.cursor()
 
-en от 1 шт 15000
+cur.execute('''
+CREATE TABLE IF NOT EXISTS users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(20) NOT NULL, 
+    email VARCHAR(20) NOT NULL UNIQUE
+);
 
-мобильный телефон 2000
+''')
+conn.commit()
 
-en от 20 шт 18000
-
-en от 50 шт 17000
-
-ru от 1 шт 15000
-
-"""
-text=text.replace("от", "от_")
-text=text.replace("шт", "")
-countries = ['ru', 'en']
-from_price = ['от 1', 'от 5', 'от 20', 'от 50']
-
-lines = [line.strip() for line in text.split("\n") if line.strip()]
-
-data={}
-flage=""
-for line in lines:
-    if line[:2] in countries:
-        line = line.split()
-        if line[0] not in data[flage]:
-            data[flage].update({line[0]:{line[1]:int(line[2])}})
-        else:
-            data[flage][line[0]].update({line[1]: int(line[2])})
-    else:
-        data[line]={}
-        flage=line
-print(data)
+# cur.execute('''
+# CREATE TABLE IF NOT EXISTS posts(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     title VARCHAR(20) NOT NULL,
+#     body VARCHAR(140) NOT NULL,
+#     user_id INTEGER  NOT NULL,
+#     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 #
-# data = {
-#     'Мобильный телефон 3000' : {
-#         'ru' : {
-#             'от 1' : 18000,
-#             'от 5' : 17000
 #
-#         },
-#         'en' : {
-#             'от 1' : 18000,
-#             'от 5' : 17000
-#     }
-# }
-# }
+#
+# );
+# ''')
+
+conn.commit()
+
+#
+# cur.execute('''
+# INSERT INTO users(name, email) VALUES(?, ?);
+# ''', ('petya', 'petya@info.com'))
+
+conn.commit()
+
+# cur.execute('''
+# UPDATE users SET name=? WHERE id=?;
+# ''', ('masha', 2))
+# conn.commit()
+
+# cur.execute('''
+# DELETE FROM users WHERE name=?;
+# ''',('masha',))
+#
+# conn.commit()
+
+# cur.execute('''
+# SELECT * FROM users LEFT JOIN posts ON users.id = posts.user_id;
+#
+# ''')
+# # for user in cur.fetchall():
+# #    print(user)
+# print(cur.fetchall())
+lst=[]
+with open('input.txt', 'r', encoding='utf-8') as file:
+    for line in file:
+
+        lst.append(line.replace("\n","").split("~"))
+print(lst)
+cur.execute('''
+CREATE TABLE IF NOT EXISTS posts(
+    title VARCHAR(20) NOT NULL,
+    body VARCHAR(140) NOT NULL, 
+    is_publish INTEGER NOT NULL,
+    user_id INTEGER  NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+
+
+
+);
+''')
+
+conn.commit()
+
+cur.executemany('''
+INSERT INTO posts(title, body, is_publish, user_id ) VALUES(?, ?, ?, ?);
+''', (lst, ))
+
+conn.commit()
