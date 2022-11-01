@@ -1,29 +1,25 @@
 import json
 from pprint import pprint
+import os
 
-dic_en_rus = {}
+import menu
+import openfile
+
+
+
+
+
+
 text=""
+dic_en_rus = {}
 
 
-class OpenFile:
+test = menu.Menus()
+test.show_menu()
+# if __name__ == "__main__":
+print('\033[33m' +'\033[1m'+ "Welcome to my firt Dictionary")
 
-    @staticmethod
-    def opening_read(self):
-        with open(self, 'r', encoding='utf-8-sig') as file:
-            return file.read()
 
-    @staticmethod
-    def opening_json(self):
-        with open(self, 'r', encoding='utf-8-sig') as file:
-            return json.load(file)
-
-read=OpenFile()
-if read.opening_read('dictionary.json'):
-    dic_en_rus = read.opening_json('dictionary.json')
-
-if __name__ == "__main__":
-    pprint("Welcome to my firt English-Russian Dictionary")
-    text = input("Введите слово для перевода:-> ").lower().strip()
 
 
 def dic_to_file(word, translate):
@@ -35,32 +31,26 @@ def dic_to_file(word, translate):
 
 def checking(dic):
     if text in dic.keys():
-        print('\n' + f'перевод слово на русский: -> ' + dic[text])
-        # start()
+        print('\n' + f'перевод слово на русский: -> ' + '\033[31m' +'\033[1m' + dic[text])
+
     else:
-        print("Данное слово не найдено!! \nВведите его значение для записи в словарь:")
+        print('\033[32m'+"Данное слово не найдено!! \nВведите его значение для записи в словарь:")
         text_translate = input().lower().strip()
-        print(dic_to_file(text, text_translate))
+        print('\033[34m'+dic_to_file(text, text_translate))
 
 
-def read_dictionary(word):
-    dic = {}
+if os.path.exists('dictionary.json'):
+    pass
+else:
+    file = open('dictionary.json', 'a+', encoding='utf-8-sig')
+    file.close()
 
-    if not read.opening_json('dictionary.json'):
-        print("словарь пустой\n" + f'Введите значение слово {word} для записи в словарь:')
-        translate = input().lower().strip()
-        print(dic_to_file(word, translate))
-    else:
-        dic = read.opening_json('dictionary.json')
-    return checking(dic)
 
-if __name__ == "__main__":
-    read_dictionary(text)
-
-# start()
-
-# def start():
-#
-#     text = input("Введите слово для перевода: ").lower().strip()
-#     return text
-
+read = openfile.OpenFile()
+if read.opening_read('dictionary.json'):
+    dic_en_rus = read.opening_json('dictionary.json')
+    checking(dic_en_rus)
+else:
+    print("словарь пустой\n" + f'Введите значение слово {text} для записи в словарь:')
+    translate = input().lower().strip()
+    print(dic_to_file(text, translate))
